@@ -1,34 +1,27 @@
 package com.ques.assesm.GroceryBooking.entity;
 
-public class Item {
+import java.math.BigDecimal;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor 
+@AllArgsConstructor 
+@Table(name="INVENTORY")
+public class Item {
+    @Id
+    @GeneratedValue(strategy =GenerationType.AUTO)
     private String itemId;
     private String itemName;
-    private String itemPrice;
-    private String itemQuantity;
+    private BigDecimal itemPrice;
+    private BigDecimal itemQuantity;
 
-    public String getItemId() {
-        return itemId;
-    }
-    public void setItemId(String itemId) {
-        this.itemId = itemId;
-    }
-    public String getItemName() {
-        return itemName;
-    }
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-    public String getItemPrice() {
-        return itemPrice;
-    }
-    public void setItemPrice(String itemPrice) {
-        this.itemPrice = itemPrice;
-    }
-    public String getItemQuantity() {
-        return itemQuantity;
-    }
-    public void setItemQuantity(String itemQuantity) {
-        this.itemQuantity = itemQuantity;
-    }
 }
